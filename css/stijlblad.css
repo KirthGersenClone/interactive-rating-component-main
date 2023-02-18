@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  /** Primary **/
+  --kl-oranje: hsl(25, 97%, 53%);
+
+  /** Neutral **/
+  --kl-wit: hsl(0, 0%, 100%);
+  --kl-grijs-200: hsl(217, 12%, 63%);
+  --kl-grijs-400: hsl(216, 12%, 54%);
+  --kl-blauw-500: hsl(213, 19%, 18%);
+  --kl-blauw-600: hsl(216, 19%, 23%);
+  --kl-blauw-700: hsl(216, 12%, 8%);
+
+  --ff-Op: "Overpass", sans-serif;
+
+  --fw-normaal: 400;
+  --fw-vet: 700;
+}
+
+/** Dit is de Josh Comeau reset **/
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: var(--kl-blauw-700);
+  /** 16px = 1rem **/
+  font-size: 0.875rem;
+  font-family: var(--ff-Op);
+  font-weight: var(--fw-normaal);
+
+  /** Nieuwe manier van centreren **/
+  display: grid;
+  place-content: center;
+}
+main {
+  --eersteScherm-padding: 2rem;
+  --eersteScherm-spacing: 1.5rem;
+  /** Om twee kolommen te krijgen bij een resolutie van 600px geven we een produkt een display grid (1) **/
+  display: grid;
+  /** Afgeronde hoeken **/
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 410px;
+  background-color: var(--kl-blauw-500);
+  color: var(--kl-wit);
+  padding: 1.5rem;
+}
+.eersteScherm {
+  display: grid;
+  gap: var(--eersteScherm-spacing);
+}
+.tweedeScherm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+}
+
+.titel {
+  font-weight: var(--fw-normaal);
+  font-size: 1.6rem;
+}
+.tekst {
+  font-weight: var(--fw-normaal);
+  color: var(--kl-grijs-200);
+  line-height: 150%;
+}
+/** Een flex-container om de ronde buttons in te plaatsen **/
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/** Cirkels maken met een cijfer in **/
+.ster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border-style: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--kl-blauw-600);
+}
+/** Cirkels maken met een cijfer in **/
+.circle {
+  display: flex;
+  border-radius: 50%;
+  border-style: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0.9rem 1rem;
+  background: var(--kl-blauw-600);
+  color: var(--kl-grijs-200);
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--kl-oranje);
+  border-style: none;
+  border-radius: 90px;
+  color: var(--kl-wit);
+  text-transform: uppercase;
+  padding: 1rem;
+  letter-spacing: 2px;
+}
+.circle:is(:hover) {
+  background-color: var(--kl-oranje);
+  color: var(--kl-wit);
+  cursor: pointer;
+}
+.circle:is(:focus) {
+  background-color: var(--kl-grijs-200);
+  color: var(--kl-wit);
+}
+.btn:is(:hover, :focus) {
+  background-color: var(--kl-wit);
+  color: var(--kl-oranje);
+  cursor: pointer;
+}
+.midden {
+  margin: auto;
+}
+.titel2,
+.tekst2 {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+.banner {
+  background: var(--kl-blauw-600);
+  color: var(--kl-oranje);
+  padding: 0.8rem 1.4rem;
+  border-radius: 2rem;
+  margin-top: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+.verborgen {
+  display: none;
+}
